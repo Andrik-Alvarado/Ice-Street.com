@@ -1,6 +1,231 @@
-index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE STREET - Tienda Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../imagesG/ICO.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="script.js" defer></script>
+</head>
+<body>
 
-jifnfujnfunfiuaf
-adjiabnad
-gwgw
-ds
+    <header>
+        <div class="logo">ICE STREET</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#coleccion">ROPA</a></li>
+                <li><a href="#gorras">GORRAS</a></li>      
+                <li><a href="#accesorios">ACCESORIOS</a></li>  
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>ARMA TU ESTILO<br>CON NOSOTROS</h1>
+            <p></p>
+            <a href="#coleccion" class="btn">VER ROPA <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <section id="coleccion" class="products">
+        <h2 class="section-title">T-SHIRTS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1551488852-080175d40026?w=500&auto=format&fit=crop&q=60" alt="Chamarra Roja">
+                </div>
+                <div class="product-info">
+                    <h3>Red Puffer Jacket</h3>
+                    <span class="price">$1,200 MXN</span>
+                    <button class="btn add-to-cart" data-product="Red Puffer Jacket" data-price="1200">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&auto=format&fit=crop&q=60" alt="Playera Negra">
+                </div>
+                <div class="product-info">
+                    <h3>Ice Street Tee</h3>
+                    <span class="price">$450 MXN</span>
+                    <button class="btn add-to-cart" data-product="Ice Street Tee" data-price="450">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60" alt="Sneakers Rojos">
+                </div>
+                <div class="product-info">
+                    <h3>Urban Sneakers</h3>
+                    <span class="price">$2,100 MXN</span>
+                    <button class="btn add-to-cart" data-product="Urban Sneakers" data-price="2100">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&auto=format&fit=crop&q=60" alt="Hoodie Navidad">
+                </div>
+                <div class="product-info">
+                    <h3>Xmas Hoodie</h3>
+                    <span class="price">$890 MXN</span>
+                    <button class="btn add-to-cart" data-product="Xmas Hoodie" data-price="890">COMPRAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gorras" class="products">
+        <h2 class="section-title">CAPS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imagesG/G1.jpg" alt="Marron Wonder">
+                </div>
+                <div class="product-info">
+                    <h3>Marron Wonder</h3>
+                    <span class="price">$200 MXN</span>
+                    <button class="btn add-to-cart" data-product="Marron Wonder" data-price="200">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imagesG/G2.jpg" alt="Green Beach">
+                </div>
+                <div class="product-info">
+                    <h3>Green Beach</h3>
+                    <span class="price">$150 MXN</span>
+                    <button class="btn add-to-cart" data-product="Green Beach" data-price="150">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imagesG/G3.jpg" alt="WASC Blue Black">
+                </div>
+                <div class="product-info">
+                    <h3>WASC Blue Black</h3>
+                    <span class="price">$150 MXN</span>
+                    <button class="btn add-to-cart" data-product="WASC Blue Black" data-price="150">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imagesG/G4.jpg" alt="No Walk Blue">
+                </div>
+                <div class="product-info">
+                    <h3>No Walk Blue</h3>
+                    <span class="price">$200 MXN</span>
+                    <button class="btn add-to-cart" data-product="No Walk Blue" data-price="200">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../imagesG/G5.jpg" alt="Grey Paradise">
+                </div>
+                <div class="product-info">
+                    <h3>Grey Paradise</h3>
+                    <span class="price">$150 MXN</span>
+                    <button class="btn add-to-cart" data-product="Grey Paradise" data-price="150">COMPRAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accesorios" class="products">
+        <h2 class="section-title">ACCESORIES</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&auto=format&fit=crop&q=60" alt="Cadena">
+                </div>
+                <div class="product-info">
+                    <h3>Silver Chain 5mm</h3>
+                    <span class="price">$550 MXN</span>
+                    <button class="btn add-to-cart" data-product="Silver Chain 5mm" data-price="550">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500&auto=format&fit=crop&q=60" alt="Mochila">
+                </div>
+                <div class="product-info">
+                    <h3>Urban Backpack</h3>
+                    <span class="price">$800 MXN</span>
+                    <button class="btn add-to-cart" data-product="Urban Backpack" data-price="800">COMPRAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60" alt="Lentes">
+                </div>
+                <div class="product-info">
+                    <h3>Street Shades</h3>
+                    <span class="price">$250 MXN</span>
+                    <button class="btn add-to-cart" data-product="Street Shades" data-price="250">COMPRAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="white-section">
+        <div class="promo-banner">
+            <div class="promo-text">
+                <h3 class="promo-intro">¿QUIENES SOMOS?</h3>
+                <h2>ICE<br>STREET</h2>
+                <div class="price-tag">PUEDES COMPRAR PRODUCTOS DESDE $99</div>
+            </div>
+            <div class="promo-image">
+                <img src="../imagesG/Andre.png" alt="Modelo Ice Street">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2>CONTACTANOS</h2>
+        <p style="color: #ccc; margin-bottom: 20px;">¿Tienes dudas sobre tu talla? Mándanos mensaje.</p>
+        
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/icestreet99/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555527663545"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/529993580530?text=Hola,%20me%20interesa%20un%20producto"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ICE STREET.</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappNumber = "529993580530"; 
+            
+            const buyButtons = document.querySelectorAll('.add-to-cart');
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    const productPrice = this.getAttribute('data-price');
+                    
+                    const message = `¡Hola! Estoy interesado en comprar el siguiente producto:%0A%0A*Producto:* ${productName}%0A*Precio:* $${productPrice} MXN%0A%0APor favor, necesito información sobre disponibilidad, tallas y formas de pago.`;
+                    
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+                    
+                    window.open(whatsappURL, '_blank');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
