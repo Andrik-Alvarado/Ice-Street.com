@@ -110,13 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(product);
     });
 
-    // --- 5. CHAT FLOTANTE (Opcional, por si lo agregaste en la sección Nosotros) ---
-    const chatBtn = document.querySelector('.chat-btn');
-    if (chatBtn) {
-        chatBtn.addEventListener('click', () => {
-            alert("Abriendo chat de soporte...");
-        });
-    }
+
 
 });
 });
