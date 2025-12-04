@@ -488,3 +488,35 @@ footer {
     cursor: default;
     margin-top: 10px;
 }
+
+/* Ocultar cursor normal */
+body C{
+    cursor: none !important;
+}
+
+/* Cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'); /* Billete icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.1s ease;
+    transform-origin: center center;
+}
+
+/* Cuando esté sobre elementos clickeables */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+    transform: scale(1.3);
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135678.png'); /* Billete verde */
+}
+
+/* Cuando esté sobre productos */
+.product-card:hover ~ .custom-cursor {
+    transform: scale(1.2) rotate(15deg);
+}
