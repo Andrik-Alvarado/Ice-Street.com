@@ -490,59 +490,6 @@ footer {
     text-align: center;
     margin-top: 10px;
 }
-
-/* --- BOTÓN FLOTANTE WHATSAPP --- */
-.float-whatsapp {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 10000; /* Asegura que esté siempre encima de todo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none; /* Quita el subrayado del enlace */
-}
-
-/* Efecto al pasar el mouse */
-.float-whatsapp:hover {
-    background-color: #128C7E; /* Verde más oscuro oficial */
-    color: #FFF;
-    transform: scale(1.1); /* Crece un poquito */
-}
-
-/* Ajuste del icono dentro del círculo */
-.my-float {
-    margin-top: 1px; /* Ajuste fino para centrado vertical */
-}
-
-/* RESPONSIVO: Ajuste para celulares (un poco más pequeño y pegado al borde) */
-@media (max-width: 768px) {
-    .float-whatsapp {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 25px;
-    }
-}
-
-/* Aplica el cursor a toda la página */
-body C {
-    /*
-       Sintaxis: url('ruta-de-tu-imagen.png') [coordenada X] [coordenada Y], cursor-de-respaldo;
-    */
-    cursor: url('https://es.vexels.com/png-svg/vista-previa/146884/billete-de-un-dolar'), auto;
-}
-
 /* Busca esto en tu style.css o agrégalo al final */
 
 @media (max-width: 768px) {
@@ -556,5 +503,3 @@ body C {
         transform: translateY(-50%); /* Ajuste fino para el centro exacto */
     }
 }
-
-
