@@ -523,3 +523,17 @@ button:hover ~ .custom-cursor,
     transform: scale(1.2) rotate(15deg);
 }
 
+
+/* Busca esto en tu style.css o agrégalo al final */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Para que se vea en celular */
+        
+        /* ESTAS SON LAS LÍNEAS MÁGICAS: */
+        position: absolute; 
+        right: 20px; /* Lo empuja a la derecha (ajusta el número si quieres más borde) */
+        top: 50%;    /* Lo centra verticalmente */
+        transform: translateY(-50%); /* Ajuste fino para el centro exacto */
+    }
+}
