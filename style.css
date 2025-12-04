@@ -473,19 +473,21 @@ footer {
     outline-offset: 2px;
 }
 
-.sold-out-btn {
+/* Opción 3: Badge Estilo Tienda */
+.sold-out-badge {
     display: inline-block;
-    width: 100%;
-    padding: 12px 30px;
-    background-color: #6c757d;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6c757d, #495057);
     color: white;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid #6c757d;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #495057;
+    width: 100%;
     text-align: center;
-    font-size: 1rem;
-    opacity: 0.7;
-    cursor: default;
     margin-top: 10px;
 }
 
@@ -520,3 +522,4 @@ button:hover ~ .custom-cursor,
 .product-card:hover ~ .custom-cursor {
     transform: scale(1.2) rotate(15deg);
 }
+
