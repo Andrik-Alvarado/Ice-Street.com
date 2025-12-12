@@ -396,3 +396,9 @@ footer {
         height: 300px;
     }
 }
+.navbar-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Empuja los elementos a los extremos */
+    width: 100%;
+}
