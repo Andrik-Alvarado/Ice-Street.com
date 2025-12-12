@@ -1,4 +1,4 @@
-/* --- 1. CONFIGURACIÓN BASE --- */
+/* --- 1. CONFIGURACIÓN BÁSICA Y VARIABLES --- */
 :root {
     --primary-red: #D31212;
     --dark-red: #8B0000;
@@ -22,16 +22,17 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--primary-red);
     color: var(--white);
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita que la página se mueva a los lados en celular */
 }
 
+/* --- 2. TIPOGRAFÍA Y BOTONES --- */
 h1, h2, h3 {
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* --- BOTONES --- */
+/* Botón General */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -47,36 +48,34 @@ h1, h2, h3 {
     font-size: 1rem;
 }
 
-.btn:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px var(--black);
+/* Botón Negro (Sección Nosotros) */
+.btn-black {
     background-color: var(--black);
     color: var(--white);
-    border-color: var(--black);
+    border: none;
+    box-shadow: none;
 }
 
-/* Botón de Comprar (Estilo Whatsapp) */
+/* Botón Añadir al Carrito / WhatsApp */
 .add-to-cart {
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
     padding: 10px 20px;
     font-size: 0.9rem;
-    font-weight: 700;
     cursor: pointer;
-    border: none;
-    background: white;
-    color: var(--primary-red);
+    background-color: white;
+    border: 2px solid white;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .add-to-cart:hover {
     background-color: var(--whatsapp-green);
-    color: var(--white);
-    transform: translateY(-2px);
+    color: white;
+    border-color: var(--whatsapp-green);
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
-/* --- HEADER --- */
+/* --- 3. HEADER Y MENÚ (ADAPTADO A MÓVIL) --- */
 header {
     background-color: rgba(211, 18, 18, 0.95);
     padding: 15px 5%;
@@ -94,17 +93,17 @@ header {
     font-size: 1.8rem;
     font-family: 'Anton', sans-serif;
     text-shadow: 3px 3px 0px var(--black);
+    position: relative;
     cursor: pointer;
     z-index: 1001;
 }
 
-.logo::after {
-    content: '🎅';
-    font-size: 1.2rem;
-    position: absolute;
-    top: -15px;
-    right: -10px;
-    transform: rotate(15deg);
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
 }
 
 nav ul {
@@ -120,42 +119,28 @@ nav ul li a {
     color: var(--white);
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 1rem;
 }
 
-.menu-toggle {
-    display: none; /* Oculto en PC */
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-/* --- HERO --- */
+/* --- 4. HERO SECTION (PORTADA) --- */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 80px;
     background: radial-gradient(circle, #ff4d4d 0%, #D31212 100%);
+    padding-top: 60px;
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     text-shadow: var(--text-shadow);
     margin-bottom: 20px;
-    animation: popIn 1s ease-out;
+    line-height: 1;
 }
 
-@keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    80% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-/* --- PRODUCTOS --- */
+/* --- 5. PRODUCTOS (GRID RESPONSIVE) --- */
 .products {
     padding: 60px 5%;
     background-color: var(--white);
@@ -165,25 +150,24 @@ nav ul li a {
 .section-title {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: var(--primary-red);
     text-shadow: 2px 2px 0px var(--black);
 }
 
-/* GRID RESPONSIVO */
+/* GRID INTELIGENTE: Se adapta automáticamente a 2 columnas en móvil y 4 en PC */
 .product-grid {
     display: grid;
-    /* Esto hace que se adapte automáticamente: Mínimo 250px en PC, pero se ajusta en móvil */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Mínimo 160px para que quepan 2 en móvil */
+    gap: 20px;
 }
 
 .product-card {
     background: #f9f9f9;
-    border: 2px solid #eee;
-    padding: 15px;
+    border: 1px solid #eee;
+    padding: 10px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .product-card:hover {
@@ -193,35 +177,40 @@ nav ul li a {
 
 .product-image {
     width: 100%;
-    height: 300px;
+    height: 250px; /* Altura fija para que todas las fotos se vean iguales */
     background-color: #ddd;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 10px;
     overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    object-fit: cover; /* Recorta la imagen para llenar el cuadro sin deformar */
 }
 
-.product-card:hover .product-image img {
-    transform: scale(1.1);
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    height: 2.4em; /* Limita el texto a 2 líneas para alinear botones */
+    overflow: hidden;
 }
 
 .price {
-    font-size: 1.2rem;
-    color: var(--primary-red);
-    font-weight: 800;
     display: block;
-    margin-bottom: 15px;
+    font-weight: 800;
+    color: var(--primary-red);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
-/* --- SECCIÓN NOSOTROS (BANNER) --- */
+.sold-out-badge {
+    color: gray;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+/* --- 6. SECCIÓN NOSOTROS (BANNER) --- */
 .white-section {
     background-color: #ffffff;
     color: #1a1a1a;
@@ -230,9 +219,9 @@ nav ul li a {
 
 .promo-banner {
     display: flex;
-    flex-wrap: wrap; /* Permite que se apile en celular */
+    flex-wrap: wrap; /* Permite que se ponga uno debajo de otro en celular */
     width: 100%;
-    min-height: 450px;
+    min-height: 400px;
     background-color: #f4f4f4;
 }
 
@@ -242,12 +231,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px 8%;
-}
-
-.promo-intro {
-    font-size: 1.2rem; 
-    margin-bottom: 10px;
+    padding: 40px 8%;
 }
 
 .promo-text h2 {
@@ -255,26 +239,15 @@ nav ul li a {
     font-weight: 900;
     font-size: 3.5rem;
     line-height: 0.9;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    margin-bottom: 10px;
     color: #000;
-}
-
-.price-tag {
-    background-color: #000;
-    color: #fff;
-    padding: 5px 15px;
-    font-family: 'Anton', sans-serif;
-    font-size: 2rem;
-    display: inline-block;
-    transform: skew(-5deg);
 }
 
 .promo-image {
     flex: 1;
     min-width: 300px;
     position: relative;
-    min-height: 350px;
+    height: 400px; /* Altura mínima para la imagen */
 }
 
 .promo-image img {
@@ -283,9 +256,19 @@ nav ul li a {
     object-fit: cover;
 }
 
-/* --- CONTACTO --- */
+.price-tag {
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* --- 7. CONTACTO & FOOTER --- */
 .contact {
-    padding: 80px 5%;
+    padding: 60px 5%;
     text-align: center;
     background-color: var(--black);
 }
@@ -295,28 +278,30 @@ nav ul li a {
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .contact-form input, 
 .contact-form textarea {
     padding: 15px;
-    font-family: 'Montserrat', sans-serif;
     border: none;
-    outline: none;
     background: #333;
     color: white;
     border-bottom: 2px solid var(--primary-red);
 }
 
 .social-icons {
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 2rem;
 }
 
 .social-icons a {
-    color: var(--white);
+    color: white;
     margin: 0 15px;
+}
+
+.social-icons a:hover {
+    color: var(--primary-red);
 }
 
 footer {
@@ -326,32 +311,52 @@ footer {
     font-size: 0.9rem;
 }
 
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
+.float-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* =========================================
-   MEDIA QUERIES (VERSION CELULAR) 
+   MEDIA QUERIES (VERSIÓN CELULAR)
    ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. Header y Menú Hamburguesa */
+    /* 1. Menú Hamburguesa */
     .menu-toggle {
-        display: block;
-        position: absolute;
+        display: block; /* Muestra el icono */
+        position: absolute; /* Lo fuerza a la derecha */
         right: 20px;
         top: 20px;
     }
 
     nav ul {
-        display: none;
+        display: none; /* Oculta la lista normal */
         flex-direction: column;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
         background-color: var(--primary-red);
-        padding: 30px 0;
+        padding: 20px 0;
         text-align: center;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
     }
 
+    /* Esta clase la activa el JS al hacer clic */
     nav ul.active {
         display: flex;
     }
@@ -362,37 +367,48 @@ footer {
 
     /* 2. Textos Grandes */
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3rem; /* Más pequeño para que quepa */
     }
-
+    
     .section-title {
         font-size: 2.5rem;
     }
 
-    /* 3. Grid de Productos (2 columnas en celular) */
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;
-    }
-
-    .product-image {
-        height: 200px; /* Imágenes más pequeñas en vertical */
-    }
-
-    .product-card {
-        padding: 10px;
-    }
-
-    /* 4. Sección Nosotros */
+    /* 3. Sección Nosotros en Celular */
     .promo-banner {
-        flex-direction: column; /* Texto arriba, imagen abajo */
+        flex-direction: column-reverse; /* Pone el texto arriba y la foto abajo si quieres, o normal column */
     }
-
+    
     .promo-text h2 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+    }
+    
+    .promo-image {
+        height: 300px; /* Altura controlada en móvil */
     }
 
-    .promo-image {
-        height: 300px;
+    /* 4. Grid de Productos en Celular */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Fuerza 2 columnas en celulares modernos */
+        gap: 10px; /* Menos espacio entre productos */
+    }
+    
+    .product-card {
+        padding: 5px;
+    }
+    
+    .product-image {
+        height: 180px; /* Fotos más pequeñas en altura */
+    }
+    
+    .btn {
+        padding: 10px 20px; /* Botones más fáciles de tocar */
+    }
+}
+
+/* Celulares muy pequeños (iPhone SE, etc) */
+@media (max-width: 400px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 sola columna si la pantalla es muy angosta */
     }
 }
