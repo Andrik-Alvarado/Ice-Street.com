@@ -129,6 +129,7 @@ nav ul li a {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
+    margin-left: auto;
 }
 
 /* --- HERO --- */
@@ -402,3 +403,4 @@ footer {
     justify-content: space-between; /* Empuja los elementos a los extremos */
     width: 100%;
 }
+
